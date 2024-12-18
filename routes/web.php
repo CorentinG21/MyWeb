@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
 Route::get('/ApiF1', function () {
     return view('apif1');
@@ -17,7 +17,7 @@ Route::get('/ApiSteam', function () {
 
 Route::get('/VeilleTechnologique', function () {
     return view('veilletechno');
-})->name('veilletechnologique');
+})->name('veilletechno');
 
 Route::get('/Contact', function () {
     return view('contact');
