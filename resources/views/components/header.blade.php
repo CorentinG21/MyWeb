@@ -131,19 +131,19 @@
     <nav>
         <ul>
             <li>
-                <a href="{{ route('index') }}"><i class="bi bi-house-door-fill"></i><span>Accueil</span></a>
+                <a href="{{ route('index') }}"><i class="bi bi-house-door-fill"></i></a>
             </li>
             <li>
-                <a href="{{ route('apif1') }}"><i class="bi bi-car-front-fill"></i><span>Api F1</span></a>
+                <a href="{{ route('apif1') }}"><i class="bi bi-car-front-fill"></i></a>
             </li>
             <li>
-                <a href="#{{ route('apisteam') }}"><i class="bi bi-steam"></i><span>Api Steam</span></a>
+                <a href="{{ route('apisteam') }}"><i class="bi bi-steam"></i></a>
             </li>
             <li>
-                <a href="{{ route('veilletechno') }}"><i class="bi bi-joystick"></i><span>Veille Techno</span></a>
+                <a href="{{ route('veilletechno') }}"><i class="bi bi-joystick"></i></a>
             </li>
             <li>
-                <a href="{{ route('contact') }}"><i class="bi bi-envelope-fill"></i><span>Contact</span></a>
+                <a href="{{ route('contact') }}"><i class="bi bi-envelope-fill"></i></a>
             </li>
         </ul>
     </nav>
