@@ -11,6 +11,6 @@
     </style>
 </head>
 <body>
-    
+    <x-header />
 </body>
 </html>
