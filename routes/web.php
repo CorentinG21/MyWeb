@@ -23,6 +23,10 @@ Route::get('/Contact', function () {
     return view('contact');
 })->name('contact');
 
+Route::get('/Infos', function () {
+    return view('info');
+})->name('info');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
