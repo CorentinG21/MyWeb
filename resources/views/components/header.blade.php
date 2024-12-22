@@ -127,7 +127,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
 <aside>
-
     <nav>
         <ul>
             <li>
@@ -150,6 +149,13 @@
             </li>
         </ul>
     </nav>
+    @if (Route::has('login'))
+        <li>
+            <a href="{{ auth()->check() ? route('dashboard') : route('login') }}">
+                <i class="bi bi-person-circle"></i>
+            </a>
+        </li>
+    @endif
 </aside>
 
 <!-- Scripts Bootstrap -->
