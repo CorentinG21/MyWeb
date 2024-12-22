@@ -16,9 +16,7 @@
     </head>
     <body class="font-sans antialiased" style="background-color: rgb(21, 32, 43);">
         <div class="min-h-screen">
-            <header>
-                <x-header/>
-            </header>
+            <x-header />
 
             <!-- Page Content -->
             <main>
