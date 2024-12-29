@@ -16,7 +16,7 @@ Route::get('/ApiF1', function () {
 //     return view('apisteam');
 // })->name('apisteam');
 
-Route::get('/apisteam', [ApiSteamController::class, 'index'])->name('apisteam');
+Route::get('/apisteam', [ApiSteamController::class, 'InfoSteam'])->name('apisteam');
 
 Route::get('/VeilleTechnologique', function () {
     return view('veilletechno');

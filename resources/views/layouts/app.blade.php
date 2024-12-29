@@ -16,11 +16,13 @@
     </head>
     <body class="font-sans antialiased" style="background-color: rgb(21, 32, 43);">
         <div class="min-h-screen">
-            <x-header />
-
-            <!-- Page Content -->
+            <header>
+                <x-header />
+            </header>
+            
+            {{-- Contenu de la page --}}
             <main>
-                {{ $slot }}
+                @yield('content')
             </main>
         </div>
     </body>

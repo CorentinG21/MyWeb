@@ -95,7 +95,7 @@
             position: absolute;
             top: 20px;
             left: 20px;
-            background: rgb(252, 165, 100);;
+            background: rgb(252, 165, 100);
             padding: 10px;
             border-radius: 50%;
             cursor: pointer;
