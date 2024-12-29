@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ApiSteamController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,9 +12,11 @@ Route::get('/ApiF1', function () {
     return view('apif1');
 })->name('apif1');
 
-Route::get('/ApiSteam', function () {
-    return view('apisteam');
-})->name('apisteam');
+// Route::get('/ApiSteam', function () {
+//     return view('apisteam');
+// })->name('apisteam');
+
+Route::get('/apisteam', [ApiSteamController::class, 'index'])->name('apisteam');
 
 Route::get('/VeilleTechnologique', function () {
     return view('veilletechno');

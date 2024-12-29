@@ -12,6 +12,7 @@
             margin: 0;
             display: flex;
             justify-content: center;
+            align-items: center;
             background-color: rgb(21, 32, 43);
             /* Couleur de fond */
         }
@@ -20,7 +21,7 @@
             margin-top: 5%;
             width: 1500px;
             max-width: 1500px;
-            height: 300px;
+            height: auto;
             background: rgb(252, 165, 100);;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -51,7 +52,7 @@
             cursor: pointer;
         }
 
-        h1 {
+        .Titre {
             text-align: center;
             font-size: 3rem;
         }
@@ -64,15 +65,17 @@
     <div class="rectangle">
         <!-- Contenu à l'intérieur du rectangle -->
         <div class="header-content">
-            <a href="{{ route('index') }}">🠔 retour au Menu principal</a>
+            <a href="{{ route('index') }}">🠔 Retour au Menu principal</a>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <button type="submit" class="btn btn-danger">
+                <button type="submit" class="btn btn-danger" style="color: red;">
                     <i class="bi bi-box-arrow-right"></i> Se déconnecter
                 </button>
             </form>
         </div>
-        <h1>Votre Dashboard</h1>
+        <div class="Titre">
+            <h1>Votre Dashboard</h1>
+        </div>
     </div>
 </body>
 
