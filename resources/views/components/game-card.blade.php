@@ -12,6 +12,7 @@
     }
 
     .card-body-game {
+        color: white;
         display: flex;
         justify-content: center; /* Centrer horizontalement */
         align-items: center; /* Centrer verticalement */

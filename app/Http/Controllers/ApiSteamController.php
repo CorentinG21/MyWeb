@@ -27,6 +27,11 @@ class ApiSteamController extends Controller
             $gamesResponse = $client->request('GET', $gamesApiUrl);
             $gamesData = json_decode($gamesResponse->getBody(), true);
             $games = $gamesData['response']['games'] ?? [];
+    
+            // Trier les jeux par ordre alphabétique du nom
+            usort($games, function ($a, $b) {
+                return strcmp($a['name'], $b['name']);
+            });
         } catch (\Exception $e) {
             Log::error('Erreur lors de la requête des jeux Steam : ' . $e->getMessage());
         }

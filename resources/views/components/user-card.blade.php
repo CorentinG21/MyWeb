@@ -2,7 +2,7 @@
     <div class="card-body text-center">
         <img src="{{ $avatar }}" alt="Avatar du joueur" class="rounded-circle mb-3" style="width: 100px; margin-right: 15px;">
         <h3 class="mb-0">{{ $name }}</h3>
-        <a href="{{ $profileUrl }}" class="ms-3"><i class="bi bi-link-45deg"></i></a>
+        <a href="{{ $profileUrl }}" class="ms-3" target="_blank"><i class="bi bi-link-45deg"></i></a>
     </div>
 </div>
 
