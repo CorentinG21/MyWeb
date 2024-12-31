@@ -19,8 +19,8 @@
 
         .rectangle {
             margin-top: 5%;
-            width: 1500px;
-            max-width: 1500px;
+            width: 900px;
+            max-width: 900px;
             height: auto;
             background: rgb(252, 165, 100);;
             border-radius: 8px;
@@ -39,7 +39,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 10px;
         }
 
         .header-content a {
@@ -54,7 +54,11 @@
 
         .Titre {
             text-align: center;
-            font-size: 3rem;
+            font-size: 1.5rem;
+        }
+
+        button {
+            font-size: 1rem;
         }
     </style>
 </head>
@@ -65,7 +69,9 @@
     <div class="rectangle">
         <!-- Contenu à l'intérieur du rectangle -->
         <div class="header-content">
-            <a href="{{ route('index') }}">🠔 Retour au Menu principal</a>
+            <div class="Titre">
+                <h1>Votre Dashboard</h1>
+            </div>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit" class="btn btn-danger" style="color: red;">
@@ -73,10 +79,26 @@
                 </button>
             </form>
         </div>
-        <div class="Titre">
-            <h1>Votre Dashboard</h1>
-        </div>
+
+        <!-- Vérification du rôle de l'utilisateur -->
+        @if (Auth::user()->role === 'admin')
+            <div class="admin-section">
+                <h2>Section Administrateur</h2>
+                <p>Bienvenue, vous avez accès aux outils d'administration.</p>
+            </div>
+        @elseif (Auth::user()->role === 'user')
+            <div class="user-section">
+                <h2>Section Utilisateur</h2>
+                <p>Bienvenue, vous avez accès aux fonctionnalités utilisateur.</p>
+            </div>
+        @else
+            <div class="guest-section">
+                <h2>Accès Restreint</h2>
+                <p>Vous n'avez pas les autorisations nécessaires pour accéder à ce contenu.</p>
+            </div>
+        @endif
     </div>
 </body>
+
 
 </html>

@@ -152,10 +152,16 @@
     @if (Route::has('login'))
         <li>
             <a href="{{ auth()->check() ? route('dashboard') : route('login') }}">
-                <i class="bi bi-person-circle"></i>
+                @if (auth()->check())
+                    <!-- Icône si l'utilisateur est connecté -->
+                    <i class="bi bi-person-circle"></i> <!-- Icône pour utilisateur connecté -->
+                @else
+                    <!-- Icône si l'utilisateur n'est pas connecté -->
+                    <i class="bi bi-box-arrow-in-right"></i> <!-- Icône pour utilisateur non connecté -->
+                @endif
             </a>
         </li>
-    @endif
+    @endif  
 </aside>
 
 <!-- Scripts Bootstrap -->

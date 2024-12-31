@@ -7,7 +7,7 @@
     <title>Accueil</title>
     <style>
         body {
-            background-color: rgb(21, 32, 43)
+            background-color: rgb(21, 32, 43);
         }
 
         .rectangleErreur {
@@ -30,6 +30,30 @@
             transition: all 0.3s ease;
             /* Transition douce lors de l'apparition/disparition */
         }
+
+        .function-header {
+            display: flex; /* Affiche les éléments en ligne */
+            justify-content: space-between; /* Ajoute un espace entre les éléments */
+            align-items: center; /* Centre verticalement les éléments */
+            text-align: center; /* Centre le texte */
+            padding: 20px;
+            width: 1000px; /* Largeur de la div */
+            margin: 20px auto; /* Centrage horizontal avec un peu de marge en haut et en bas */
+        }
+        .function-header p {
+            font-size: 1.5rem;
+        }
+        .search-bar {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .game-count {
+            color: white;
+            margin: 0; /* Supprime les marges supplémentaires pour un meilleur alignement */
+        }
     </style>
 </head>
 
@@ -40,12 +64,17 @@
         :avatar="$user['avatarmedium'] ?? ''"
         :name="$user['personaname'] ?? 'Non disponible'"
         :profileUrl="$user['profileurl'] ?? '#'" />
-
-    <input
-        type="text"
-        id="search-bar"
-        placeholder="Recherchez un jeu..."
-        style="padding: 10px; width: 300px; margin: 20px auto; display: block; border: 1px solid #ccc; border-radius: 5px;">
+    
+    <div class="function-header d-flex">
+        <input
+            type="text"
+            id="search-bar"
+            placeholder="Recherchez un jeu..."
+            class="search-bar">
+        
+        <p class="game-count">Nombre de jeux : {{ count($games) }}</p>
+    </div>
+    
 
     <div id="games-container">
         @foreach($games as $game)
