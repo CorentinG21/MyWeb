@@ -6,21 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <style>
-        body,
-        html {
-            height: 100%;
+        body, html {
             margin: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
             background-color: rgb(21, 32, 43);
             /* Couleur de fond */
         }
 
-        .rectangle {
-            margin-top: 5%;
-            width: 900px;
-            max-width: 900px;
+        .header-content-dashboard {
+            margin-top: 30px;
+            width: 1200px;
             height: auto;
             background: rgb(252, 165, 100);;
             border-radius: 8px;
@@ -30,8 +26,8 @@
         /* Responsiveness */
         @media (max-width: 1000px) {
             .rectangle {
-                width: 90%;
-                height: 250px;
+                width: auto;
+                height: auto;
             }
         }
 
@@ -66,7 +62,7 @@
 <body>
     <x-header />
 
-    <div class="rectangle">
+    <div class="header-content-dashboard">
         <!-- Contenu à l'intérieur du rectangle -->
         <div class="header-content">
             <div class="Titre">
@@ -81,7 +77,7 @@
         </div>
 
         <!-- Vérification du rôle de l'utilisateur -->
-        @if (Auth::user()->role === 'admin')
+        <!-- @if (Auth::user()->role === 'admin')
             <div class="admin-section">
                 <h2>Section Administrateur</h2>
                 <p>Bienvenue, vous avez accès aux outils d'administration.</p>
@@ -96,7 +92,7 @@
                 <h2>Accès Restreint</h2>
                 <p>Vous n'avez pas les autorisations nécessaires pour accéder à ce contenu.</p>
             </div>
-        @endif
+        @endif -->
     </div>
 </body>
 
