@@ -13,19 +13,15 @@
             </form>
         </div>
     </div>
-    @if (Auth::user()->role === 'admin')
-        <div class="navbar-header-admin">
-            <div class="navbar-content">
-                <a href="#section1">Liste Users</a>
+    <div class="navbar-header-admin">
+        <div class="navbar-content">
+            @if (Auth::user()->role === 'admin')
+                <a href="">Liste Users</a>
                 <span>|</span>
-                <a href="{{ route('profile.edit') }}">Edi Profile</a>
-                <span>|</span>
-                <a href="#section3">Paramètres</a>
-                <span>|</span>
-                <a href="#section4">Aide</a>
-            </div>
+            @endif
+            <a href="{{ route('profile.edit') }}">Edit Profile</a>
         </div>
-    @endif   
+    </div>   
 </div>
 
 <style>
