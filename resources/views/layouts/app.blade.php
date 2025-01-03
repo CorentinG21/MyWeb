@@ -23,6 +23,7 @@
             {{-- Contenu de la page --}}
             <main>
                 @yield('content')
+                {{ $slot }}
             </main>
         </div>
     </body>

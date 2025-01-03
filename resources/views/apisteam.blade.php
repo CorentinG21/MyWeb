@@ -10,7 +10,7 @@
             background-color: rgb(21, 32, 43);
         }
 
-        .rectangleErreur {
+        .rectangleErreur h1 {
             display: flex;
             justify-content: center;
             align-items: center;

@@ -142,11 +142,12 @@
                 <a href="{{ route('veilletechno') }}"><i class="bi bi-joystick"></i></a>
             </li>
             <li>
-                <a href="{{ route('contact') }}"><i class="bi bi-envelope-fill"></i></a>
-            </li>
-            <li>
                 <a href="{{ route('info') }}"><i class="bi bi-info-circle-fill"></i></a>
             </li>
+            <li>
+                <a href="{{ route('contact') }}"><i class="bi bi-envelope-fill"></i></a>
+            </li>
+            
         </ul>
     </nav>
     @if (Route::has('login'))
