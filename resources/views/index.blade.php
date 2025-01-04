@@ -40,6 +40,15 @@
             display: flex;
             justify-content: space-between;
         }
+
+        .Details {
+            padding-top: 10px;
+        }
+
+        .lig1, .lig2 {
+            display: flex;
+            justify-content: space-between;
+        }
     </style>
 </head>
 <body>
@@ -55,12 +64,22 @@
                         <h1>Corentin GODON</h1>
                         <h3>Stage 3ème année Bachelor Développement Web Ecole IRIS Rouen</h3>
                         <span>Diplômé d’un BTS SIO (Services Informatiques aux Organisations), spécialité SLAM ( Solutions logicielles et applications métiers ).</span>
+                        <div class="Details">
+                            <div class="lig1">
+                                <p><i class="bi bi-balloon"></i> 21 ans</p>
+                                <p><i class="bi bi-flag"></i> Française</p>
+                                <p><i class="bi bi-telephone"></i> 06-38-81-58-52</p>
+                                <p><i class="bi bi-car-front"></i> Permis B</p>
+                            </div>
+                            <div class="lig2">
+                                <p><i class="bi bi-geo-alt"></i> 32 rue de la plaine, 76240 Bonsecours</p>
+                                <p><i class="bi bi-envelope"></i> corentingodon21@gmail.com</p>
+                                <p><a href="https://www.linkedin.com/in/corentin-godon-49187717a/" target="_blank" style="text-decoration: none; color: black"><i class="bi bi-linkedin"></i> Linkedin</a></p>
+                            </div>   
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="DL">
-            <a href="{{ asset('public\Fichier\Godon_Corentin_CV_Stage_IRIS.pdf') }}" download="pdf"><i class="bi bi-download"></i></a>
         </div>
     </div>
 </body>
