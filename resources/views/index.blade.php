@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +11,12 @@
         }
 
         .CV {
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
         }
+
         .Rectangle1 {
             margin-top: 20px;
             padding: 20px;
@@ -45,58 +47,133 @@
             padding-top: 10px;
         }
 
-        .lig1, .lig2 {
+        .lig1,
+        .lig2 {
             display: flex;
             justify-content: space-between;
         }
 
         .profilPerso {
-            margin-top: 40px;
+            margin-top: 20px;
             display: flex;
+            flex-direction: column;
             align-items: center;
-        }
-
-        .content-PP {
-            border: 3px solid black;
-            border-radius: 10px;
-            padding: 10px;
-            width: 700PX ; /*la largeur de son parent */
-            height: auto; /* 200px de hauteur */
+            /* Centre les enfants horizontalement */
         }
 
         .TitrePP {
-            transform: rotate(-90deg); /* Tourne le texte de 90° vers le haut */
-            /* transform-origin: left top; */ /* Origine de la rotation */
-            display: inline-block; /* Nécessaire pour appliquer correctement la transformation */
+            width: 100%;
+            /* S'étend sur toute la largeur du parent */
+            text-align: center;
+            /* Aligne le titre à gauche */
+            font-size: 1.5rem;
+        }
+
+        .content-PP {
+            display: flex;
+            /* Active Flexbox */
+            align-items: center;
+            /* Aligne verticalement l'icône et le texte */
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            width: 800px;
+            height: auto;
+            margin: auto;
+        }
+
+        .content-PP .icon {
+            margin-right: 15px;
+            /* Espacement entre l'icône et le texte */
+            font-size: 24px;
+            /* Taille de l'icône */
+            color: black;
+            /* Couleur bleue par défaut */
         }
 
         .Formation {
-            margin-top: 40px;
+            margin-top: 20px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            /* Les enfants s'empilent verticalement */
             align-items: center;
+            /* Centre les enfants horizontalement */
         }
 
-        .TitreFormation h3 {
-            transform: rotate(-90deg); /* Tourne le texte de 90° vers le haut */
-            /* transform-origin: left top; */ /* Origine de la rotation */
-            display: inline-block; /* Nécessaire pour appliquer correctement la transformation */
-            white-space: nowrap;
+        .TitreFormation {
+            width: 100%;
+            /* S'étend sur toute la largeur */
+            text-align: center;
+            /* Aligne le titre à gauche */
+            font-size: 1.5rem;
+        }
+
+        .block-content-formation {
+            display: flex;
+            width: 1000px;
+            justify-content: space-between;
+            gap: 10px;
         }
 
         .content-formation {
-            border: 1px solid #ddd;
+            border: 3px solid #ddd;
             border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 20px;
+            padding: 10px;
+            margin-bottom: 10px;
             background-color: #f9f9f9;
+            width: 800px;
+            /* Largeur fixe pour centrer */
+            text-align: left;
+            /* Aligne le contenu à gauche */
         }
-        .content-formation h3 {
-            margin-top: 10px;
-            font-size: 1.5em;
+
+        .CompTech-CompGéné {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .TitreCompTech {
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .block-content-CompTech {
+            display: flex;
+            width: 600px;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .content-CompTech {
+            border: 3px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            width: 400px;
+            text-align: left;
+        }
+
+        .TitreCompGéné {
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .categorie {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .EpPro-CentreInteret-NivLang {
+            display: flex;
+            justify-content: space-between;
         }
     </style>
 </head>
+
 <body>
     <x-header />
 
@@ -121,38 +198,90 @@
                                 <p><i class="bi bi-geo-alt"></i> 32 rue de la plaine, 76240 Bonsecours</p>
                                 <p><i class="bi bi-envelope"></i> corentingodon21@gmail.com</p>
                                 <p><a href="https://www.linkedin.com/in/corentin-godon-49187717a/" target="_blank" style="text-decoration: none; color: black"><i class="bi bi-linkedin"></i> Linkedin</a></p>
-                            </div>   
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="profilPerso">
                 <div class="TitrePP">
-                    <h3>Profil Personnel</h3>
+                    <h3>--- Profil Personnel ---</h3>
                 </div>
                 <div class="content-PP">
-                    <p>Ma personnalité a pour principaux traits l'ouverture et l'écoute . J'aime apprendre de nouvelles connaissances. J'aime travailler en équipe et je m'adapte très bien aux différentes situations. </p>
+                    <div class="icon">
+                        <i class="bi bi-info-circle"></i>
+                    </div>
+                    <p>
+                        Ma personnalité a pour principaux traits l'ouverture et l'écoute. J'aime apprendre de nouvelles connaissances. J'aime travailler en équipe et je m'adapte très bien aux différentes situations.
+                    </p>
                 </div>
             </div>
             <div class="Formation">
                 <div class="TitreFormation">
-                    <h3>Liste des Formations</h3>
+                    <h3>--- Formations ---</h3>
                 </div>
-
-                @if($formations->isEmpty())
+                <div class="block-content-formation">
+                    @if($formations->isEmpty())
                     <p>Aucune formation disponible.</p>
-                @else
+                    @else
                     @foreach ($formations as $formation)
-                        <div class="content-formation">
-                            <h3>{{ $formation->diplome }}</h3>
-                            <p><strong>Établissement :</strong> {{ $formation->etablissement }}</p>
-                            <p><strong>Ville :</strong> {{ $formation->ville }}</p>
-                            <p><strong>Années :</strong> {{ $formation->annee_debut }} - {{ $formation->annee_fin }}</p>
-                        </div>
+                    <div class="content-formation">
+                        <h3>{{ $formation->diplome }}</h3>
+                        <p><strong>Années :</strong> {{ $formation->annee_debut }} - {{ $formation->annee_fin }}</p>
+                        <p><strong>Établissement :</strong> {{ $formation->etablissement }}</p>
+                        <p><strong>Ville :</strong> {{ $formation->ville }}</p>
+                    </div>
                     @endforeach
-                @endif
+                    @endif
+                </div>
+            </div>
+            <div class="CompTech-CompGéné">
+                <div class="CompeTech">
+                    <div class="TitreCompTech">
+                        <h3>--- Compétences Techniques ---</h3>
+                    </div>
+                    <div class="block-content-CompTech">
+                        @foreach ($categories as $categorie)
+                        <div class="content-CompTech">
+                            <div class="categorie">
+                                {{ $categorie->nom }}
+                            </div>
+                            <ul class="competences">
+                                @foreach ($categorie->competences as $competence)
+                                <li>{{ $competence->nom }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="CompGéné">
+                    <div class="TitreCompGéné">
+                        <h3>--- Compétences Générales ---</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="EpPro-CentreInteret-NivLang">
+                <div class="EpPro">
+                    <div class="TitreEpPro">
+                        <h3>--- Expériences Professionnelles ---</h3>
+                    </div>
+                </div>
+                <div class="CentreInteret-NivLang">
+                    <div class="CentreInteret">
+                        <div class="TitreCentreInteret">
+                            <h3>--- Centres d'intérêts ---</h3>
+                        </div>
+                    </div>
+                    <div class="NivLang">
+                        <div class="TitreNivLang">
+                            <h3>--- Niveau de Langues ---</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>
