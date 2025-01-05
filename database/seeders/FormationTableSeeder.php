@@ -18,7 +18,7 @@ class FormationTableSeeder extends Seeder
             'annee_debut' => '2012',
             'annee_fin' => '2020',
             'etablissement' => 'Jean Baptiste de la Salle',
-            'diplome' => 'Bevet',
+            'diplome' => 'Brevet',
             'ville' => 'Rouen',
         ]);
 

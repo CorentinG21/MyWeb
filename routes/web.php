@@ -2,11 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ApiSteamController;
+use App\Http\Controllers\FormationController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+Route::get('/', [FormationController::class, 'index'])->name('index');
 
 Route::get('/ApiF1', function () {
     return view('apif1');

@@ -49,6 +49,52 @@
             display: flex;
             justify-content: space-between;
         }
+
+        .profilPerso {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .content-PP {
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            width: 700PX ; /*la largeur de son parent */
+            height: auto; /* 200px de hauteur */
+        }
+
+        .TitrePP {
+            transform: rotate(-90deg); /* Tourne le texte de 90° vers le haut */
+            /* transform-origin: left top; */ /* Origine de la rotation */
+            display: inline-block; /* Nécessaire pour appliquer correctement la transformation */
+        }
+
+        .Formation {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .TitreFormation h3 {
+            transform: rotate(-90deg); /* Tourne le texte de 90° vers le haut */
+            /* transform-origin: left top; */ /* Origine de la rotation */
+            display: inline-block; /* Nécessaire pour appliquer correctement la transformation */
+            white-space: nowrap;
+        }
+
+        .content-formation {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+        .content-formation h3 {
+            margin-top: 10px;
+            font-size: 1.5em;
+        }
     </style>
 </head>
 <body>
@@ -79,6 +125,32 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="profilPerso">
+                <div class="TitrePP">
+                    <h3>Profil Personnel</h3>
+                </div>
+                <div class="content-PP">
+                    <p>Ma personnalité a pour principaux traits l'ouverture et l'écoute . J'aime apprendre de nouvelles connaissances. J'aime travailler en équipe et je m'adapte très bien aux différentes situations. </p>
+                </div>
+            </div>
+            <div class="Formation">
+                <div class="TitreFormation">
+                    <h3>Liste des Formations</h3>
+                </div>
+
+                @if($formations->isEmpty())
+                    <p>Aucune formation disponible.</p>
+                @else
+                    @foreach ($formations as $formation)
+                        <div class="content-formation">
+                            <h3>{{ $formation->diplome }}</h3>
+                            <p><strong>Établissement :</strong> {{ $formation->etablissement }}</p>
+                            <p><strong>Ville :</strong> {{ $formation->ville }}</p>
+                            <p><strong>Années :</strong> {{ $formation->annee_debut }} - {{ $formation->annee_fin }}</p>
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>
