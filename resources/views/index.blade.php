@@ -141,7 +141,7 @@
 
         .block-content-CompTech {
             display: flex;
-            width: 600px;
+            width: 650px;
             justify-content: space-between;
             gap: 10px;
         }
@@ -170,6 +170,48 @@
         .EpPro-CentreInteret-NivLang {
             display: flex;
             justify-content: space-between;
+        }
+
+        .TitreExPro {
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .content-expro {
+            border: 3px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            width: 650px;
+            text-align: left;
+        }
+
+        .duree-annee {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nom-ville {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nom-ville h3 {
+            font-size: 1.5rem;
+        }
+        .TitreCentreInteret {
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .TitreNivLang {
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
         }
     </style>
 </head>
@@ -222,16 +264,16 @@
                 </div>
                 <div class="block-content-formation">
                     @if($formations->isEmpty())
-                    <p>Aucune formation disponible.</p>
+                        <p>Aucune formation disponible.</p>
                     @else
-                    @foreach ($formations as $formation)
-                    <div class="content-formation">
-                        <h3>{{ $formation->diplome }}</h3>
-                        <p><strong>Années :</strong> {{ $formation->annee_debut }} - {{ $formation->annee_fin }}</p>
-                        <p><strong>Établissement :</strong> {{ $formation->etablissement }}</p>
-                        <p><strong>Ville :</strong> {{ $formation->ville }}</p>
-                    </div>
-                    @endforeach
+                        @foreach ($formations as $formation)
+                        <div class="content-formation">
+                            <h3>{{ $formation->diplome }}</h3>
+                            <p><strong>Années :</strong> {{ $formation->annee_debut }} - {{ $formation->annee_fin }}</p>
+                            <p><strong>Établissement :</strong> {{ $formation->etablissement }}</p>
+                            <p><strong>Ville :</strong> {{ $formation->ville }}</p>
+                        </div>
+                        @endforeach
                     @endif
                 </div>
             </div>
@@ -263,8 +305,28 @@
             </div>
             <div class="EpPro-CentreInteret-NivLang">
                 <div class="EpPro">
-                    <div class="TitreEpPro">
+                    <div class="TitreExPro">
                         <h3>--- Expériences Professionnelles ---</h3>
+                    </div>
+                    <div class="block-content-ExPro">
+                        @if($xpPros->isEmpty())
+                            <p>Aucune expérience professionnelle disponible.</p>
+                        @else
+                            @foreach ($xpPros as $xpPro)
+                            <div class="content-expro">
+                                <div class="nom-ville">
+                                    <h3>{{ $xpPro->nom_entreprise }}</h3>
+                                    <p>{{ $xpPro->ville }}</p>
+                                </div> 
+                                <p>{{ $xpPro->type_emploi }}</p>
+                                <p><strong>Libellé :</strong> {{ $xpPro->libelle }}</p>
+                                <div class="duree-annee">
+                                    <p><strong>Durée :</strong> {{ $xpPro->durée }}</p>
+                                    <p><strong>Année :</strong> {{ $xpPro->annee }}</p>
+                                </div>
+                            </div>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
                 <div class="CentreInteret-NivLang">
@@ -276,6 +338,7 @@
                     <div class="NivLang">
                         <div class="TitreNivLang">
                             <h3>--- Niveau de Langues ---</h3>
+                            <img src="{{ asset('Image/Niveau_anglais_B1.png') }}" alt="icon">
                         </div>
                     </div>
                 </div>
